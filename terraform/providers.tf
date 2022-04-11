@@ -5,12 +5,12 @@ terraform {
       version = "~>2.0"
     }
   }
-  cloud {
-    organization = "nw-tfc-learn"
-    workspaces {
-      name = "consul-service-mesh-aks"
-    }
-  }
+  #  cloud {
+  #    organization = "nw-tfc-learn"
+  #    workspaces {
+  #      name = "consul-service-mesh-aks"
+  #    }
+  #  }
 }
 
 provider "azurerm" {

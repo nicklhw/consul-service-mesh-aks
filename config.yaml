@@ -1,0 +1,12 @@
+global:
+  name: consul
+connectInject:
+  enabled: true
+controller:
+  enabled: true
+server:
+  replicas: 3
+ui:
+  enabled: true
+  service:
+    type: LoadBalancer

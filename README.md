@@ -1,6 +1,6 @@
 # Consul Service Mesh with AKS and Calico Network Policy
 
-## Pre-requisites
+## Prerequisites
 
 1. This repo uses Terraform to install an AKS cluster, you will need the [Terraform CLI](https://learn.hashicorp.com/tutorials/terraform/install-cli) installed.
 2. Have a valid Azure subscription and be authenticated in your terminal, however you like to do that.

@@ -8,14 +8,14 @@ all: aks consul test consul-test
 aks: terraform-apply azurek8s.kubeconfig
 
 terraform-apply:
-	cd terraform \
-	&& terraform init \
-	&& terraform apply
+	cd terraform && \
+	terraform init && \
+	terraform apply
 
 azurek8s.kubeconfig:
-	cd terraform \
-	&& terraform output kube_config | grep -v EOT > azurek8s.kubeconfig \
-	&& chmod 600 azurek8s.kubeconfig
+	cd terraform && \
+	terraform output kube_config | grep -v EOT > azurek8s.kubeconfig && \
+	chmod 600 azurek8s.kubeconfig
 
 test: azurek8s.kubeconfig
 	$(KUBECTL) get nodes
@@ -59,6 +59,6 @@ netpol-clean:
 	$(KUBECTL) delete -f k8s/netpol/
 
 clean:
-	cd terraform \
-	&& terraform destroy
-	&& rm -f terraform/azurek8s.kubeconfig
+	cd terraform && \
+	terraform destroy
+	rm -f terraform/azurek8s.kubeconfig
